@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriAI — Smartest AI Nutrition Assistant</title>
+  <meta name="description" content="Your personalized AI nutrition assistant. Get adaptive meal plans, food analysis, and expert nutritional guidance tailored to you." />
+  <meta property="og:title" content="NutriAI — Smartest AI Nutrition Assistant" />
+  <meta property="og:description" content="Personalized meal plans, food image analysis, and real-time nutritional coaching powered by AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Background Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">🥗</div>
+        <span class="logo-text">Nutri<span class="logo-accent">AI</span></span>
+        <span class="logo-badge">AI</span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+        <a href="#chat" class="nav-link" onclick="showSection('chat')">AI Coach</a>
+        <a href="#meal-plan" class="nav-link" onclick="showSection('meal-plan')">Meal Planner</a>
+        <a href="#analyze" class="nav-link" onclick="showSection('analyze')">Food Analyzer</a>
+        <a href="#profile" class="nav-link" onclick="showSection('profile')">My Profile</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-nav-primary" onclick="showSection('chat')">Start Now →</button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="section-home" class="section active">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          AI Nutrition Coach
+        </div>
+        <h1 class="hero-title">
+          Your Smartest<br />
+          <span class="gradient-text">AI Nutrition</span><br />
+          Assistant
+        </h1>
+        <p class="hero-subtitle">
+          Hyper-personalized meal plans, real-time food analysis, and adaptive coaching — 
+          built on AI and Watson. No more generic diets.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showSection('chat')">
+            <span>Chat with NutriAI</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-secondary" onclick="showSection('meal-plan')">Generate Meal Plan</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">Foods Analyzed</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Accuracy Rate</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">AI</span>
+            <span class="stat-label">Personalized</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-avatar">🤖</div>
+              <div>
+                <div class="phone-name">NutriAI</div>
+                <div class="phone-status">● Online</div>
+              </div>
+            </div>
+            <div class="phone-messages">
+              <div class="msg-bubble ai-msg">
+                <span>Good morning! Based on your goals, here's your personalized breakfast plan 🌅</span>
+              </div>
+              <div class="msg-bubble ai-msg meal-card-mini">
+                <div class="mini-meal">
+                  <span class="mini-emoji">🥑</span>
+                  <div>
+                    <strong>Avocado Toast</strong>
+                    <span>320 kcal • High Protein</span>
+                  </div>
+                </div>
+              </div>
+              <div class="msg-bubble user-msg">
+                <span>Can I swap this for something vegan?</span>
+              </div>
+              <div class="msg-bubble ai-msg">
+                <span>Absolutely! Try Chia Pudding — same macros, 100% plant-based 🌱</span>
+              </div>
+            </div>
+            <div class="phone-input-bar">
+              <span>Ask about nutrition...</span>
+            </div>
+          </div>
+        </div>
+        <div class="float-card card-1">
+          <span class="float-icon">🔥</span>
+          <div>
+            <strong>1,840 kcal</strong>
+            <span>Today's Target</span>
+          </div>
+        </div>
+        <div class="float-card card-2">
+          <span class="float-icon">💪</span>
+          <div>
+            <strong>45g Protein</strong>
+            <span>Breakfast Goal</span>
+          </div>
+        </div>
+        <div class="float-card card-3">
+          <span class="float-icon">✅</span>
+          <div>
+            <strong>On Track</strong>
+            <span>Macros Balance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="features-section">
+      <div class="section-header">
+        <h2>Everything You Need for <span class="gradient-text">Optimal Nutrition</span></h2>
+        <p>Powered by advanced language understanding and multimodal AI capabilities</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" onclick="showSection('chat')">
+          <div class="feature-icon">💬</div>
+          <h3>AI Nutrition Coach</h3>
+          <p>Chat naturally with your AI nutrition expert. Ask anything, get personalized, evidence-based advice.</p>
+          <span class="feature-tag">NLP Powered</span>
+        </div>
+        <div class="feature-card" onclick="showSection('meal-plan')">
+          <div class="feature-icon">📅</div>
+          <h3>Smart Meal Planner</h3>
+          <p>Generate 7-day adaptive meal plans aligned with your goals, allergies, cultural preferences, and fitness routine.</p>
+          <span class="feature-tag">Personalized</span>
+        </div>
+        <div class="feature-card" onclick="showSection('analyze')">
+          <div class="feature-icon">📸</div>
+          <h3>Food Image Analyzer</h3>
+          <p>Upload food photos or grocery labels. AI Vision identifies foods and extracts complete nutritional data instantly.</p>
+          <span class="feature-tag">Multimodal AI</span>
+        </div>
+        <div class="feature-card" onclick="sendQuickMessage('Suggest healthier swaps for common ingredients')" title="Suggest healthy swaps">
+          <div class="feature-icon">🔄</div>
+          <h3>Smart Food Swaps</h3>
+          <p>Get contextual food substitutions that match your taste preferences while meeting your nutritional targets.</p>
+          <span class="feature-tag">Adaptive</span>
+        </div>
+        <div class="feature-card" onclick="showSection('profile')" title="Open profile and analytics">
+          <div class="feature-icon">📊</div>
+          <h3>Progress Analytics</h3>
+          <p>Track macro and micro-nutrient intake, body metrics, and nutrition scores with AI-powered insights.</p>
+          <span class="feature-tag">Data-Driven</span>
+        </div>
+        <div class="feature-card" onclick="showSection('profile')" title="Open health profile">
+          <div class="feature-icon">🧬</div>
+          <h3>Health Condition Aware</h3>
+          <p>Specialized guidance for diabetes, hypertension, PCOS, thyroid conditions, and 20+ medical conditions.</p>
+          <span class="feature-tag">Medical-Grade</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IBM Tech Stack -->
+    <div class="tech-section">
+      <div class="section-header">
+        <h2>Built on <span class="gradient-text">AI Cloud</span></h2>
+        <p>Enterprise-grade AI infrastructure for accurate, safe, and explainable nutrition guidance</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-logo ibm-logo">AI</div>
+          <h4>AI Reasoning Engine</h4>
+          <p>Core reasoning engine for contextual nutrition advice and meal generation</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-logo watson-logo">W</div>
+          <h4>Watson Assistant</h4>
+          <p>Conversational AI framework for seamless multi-turn dietary consultations</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-logo wx-logo">WX</div>
+          <h4>watsonx.ai Studio</h4>
+          <p>Model training, fine-tuning on dietary datasets, and prompt engineering</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-logo cloud-logo">☁</div>
+          <h4>IBM Cloud Lite</h4>
+          <p>Scalable, secure cloud infrastructure with HIPAA-compliant data handling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT SECTION -->
+  <section id="section-chat" class="section">
+    <div class="chat-layout">
+      <!-- Sidebar -->
+      <div class="chat-sidebar">
+        <div class="sidebar-header">
+          <h3>AI Nutrition Coach</h3>
+          <button class="new-chat-btn" onclick="clearChat()">+ New Chat</button>
+        </div>
+        <div class="quick-prompts">
+          <p class="quick-prompts-label">Quick Questions</p>
+          <button class="quick-btn" onclick="sendQuickMessage('Create a high-protein breakfast plan for muscle gain')">🏋️ Muscle Gain Breakfast</button>
+          <button class="quick-btn" onclick="sendQuickMessage('What foods should I avoid for diabetes management?')">🩺 Diabetes Food Guide</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Give me a 7-day vegan meal plan for weight loss')">🌱 Vegan Weight Loss Plan</button>
+          <button class="quick-btn" onclick="sendQuickMessage('What are the best anti-inflammatory foods?')">🔥 Anti-Inflammatory Foods</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Calculate my daily calorie needs for moderate activity')">⚡ Calorie Calculator</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Suggest heart-healthy Indian meal options')">❤️ Heart-Healthy Indian Meals</button>
+        </div>
+        <div class="sidebar-info">
+          <div class="info-badge">
+            <span>🤖</span>
+            <span>AI Model 13B</span>
+          </div>
+          <div class="info-badge">
+            <span>🔒</span>
+            <span>Privacy Protected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Main -->
+      <div class="chat-main">
+        <div class="chat-header">
+          <div class="chat-agent-info">
+            <div class="agent-avatar">🥗</div>
+            <div>
+              <h3>NutriAI Coach</h3>
+              <span class="online-status">● Online</span>
+            </div>
+          </div>
+          <div class="chat-actions">
+            <button class="icon-btn" title="Voice Input" onclick="toggleVoiceInput()">🎙️</button>
+            <button class="icon-btn" title="Clear Chat" onclick="clearChat()">🗑️</button>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="welcome-message">
+            <div class="welcome-icon">🥗</div>
+            <h2>Hello! I'm NutriAI</h2>
+            <p>Your personal nutrition expert powered by AI. I can help you with personalized meal plans, food analysis, nutritional advice, and much more.</p>
+            <div class="welcome-chips">
+              <span class="chip" onclick="sendQuickMessage('What can you help me with?')">What can you do?</span>
+              <span class="chip" onclick="sendQuickMessage('Create a personalized meal plan for me')">Create meal plan</span>
+              <span class="chip" onclick="sendQuickMessage('Analyze my nutrition needs based on my health goals')">Analyze my needs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="voice-indicator" id="voiceIndicator" style="display:none">
+          <div class="voice-waves">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p>Listening... Speak your question</p>
+          <button onclick="stopVoiceInput()">Stop</button>
+        </div>
+
+        <div class="chat-input-area">
+          <div class="image-preview" id="imagePreview" style="display:none">
+            <img id="previewImg" src="" alt="Food preview" />
+            <button onclick="removeImage()" class="remove-img">✕</button>
+          </div>
+          <div class="chat-input-row">
+            <label class="upload-btn" for="foodImageInput" title="Upload food image">
+              📎
+              <input type="file" id="foodImageInput" accept="image/*" onchange="handleImageUpload(event)" style="display:none" />
+            </label>
+            <textarea
+              id="chatInput"
+              class="chat-textarea"
+              placeholder="Ask about nutrition, meal plans, food analysis..."
+              rows="1"
+              onkeydown="handleChatKeydown(event)"
+              oninput="autoResizeTextarea(this)"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </div>
+          <p class="input-disclaimer">NutriAI provides educational information. Consult a healthcare provider for medical decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEAL PLAN SECTION -->
+  <section id="section-meal-plan" class="section">
+    <div class="page-container">
+      <div class="page-header">
+        <h1>AI <span class="gradient-text">Meal Planner</span></h1>
+        <p>Generate a personalized 7-day meal plan powered by AI. Tailored to your body, goals, and preferences.</p>
+      </div>
+
+      <div class="meal-planner-layout">
+        <!-- Form Panel -->
+        <div class="planner-form-panel">
+          <div class="form-card">
+            <h3>📋 Your Profile</h3>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" id="mpAge" placeholder="25" min="10" max="100" value="28" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" id="mpWeight" placeholder="70" value="72" />
+              </div>
+              <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" id="mpHeight" placeholder="170" value="168" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <select id="mpGender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Non-binary</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Primary Health Goal</label>
+              <select id="mpGoal">
+                <option>Weight Loss</option>
+                <option>Muscle Gain</option>
+                <option>Maintain Weight</option>
+                <option>Improve Energy</option>
+                <option>Manage Diabetes</option>
+                <option>Heart Health</option>
+                <option>PCOS Management</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Activity Level</label>
+              <select id="mpActivity">
+                <option>Sedentary (desk job)</option>
+                <option>Lightly Active (1-3 days/week)</option>
+                <option selected>Moderately Active (3-5 days/week)</option>
+                <option>Very Active (6-7 days/week)</option>
+                <option>Extremely Active (athlete)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Dietary Preference</label>
+              <select id="mpDiet">
+                <option>No Restriction</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+                <option>Keto</option>
+                <option>Mediterranean</option>
+                <option>Paleo</option>
+                <option>Gluten-Free</option>
+                <option>Indian Vegetarian</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Allergies / Intolerances</label>
+              <input type="text" id="mpAllergies" placeholder="e.g., nuts, dairy, gluten" />
+            </div>
+            <div class="form-group">
+              <label>Medical Conditions</label>
+              <input type="text" id="mpConditions" placeholder="e.g., diabetes, hypertension" />
+            </div>
+            <div class="form-group">
+              <label>Cuisine Preferences</label>
+              <input type="text" id="mpCuisine" placeholder="e.g., Indian, Mediterranean, Mexican" value="Indian, Mediterranean" />
+            </div>
+            <button class="btn-primary full-width" onclick="generateMealPlan()" id="generateBtn">
+              <span id="generateBtnText">✨ Generate AI Meal Plan</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Meal Plan Display -->
+        <div class="planner-result-panel">
+          <div id="mealPlanPlaceholder" class="result-placeholder">
+            <div class="placeholder-icon">🍽️</div>
+            <h3>Your Personalized Meal Plan</h3>
+            <p>Fill in your profile and click "Generate AI Meal Plan" to get a fully customized 7-day nutrition program.</p>
+          </div>
+          <div id="mealPlanResult" class="meal-plan-result" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD ANALYZER SECTION -->
+  <section id="section-analyze" class="section">
+    <div class="page-container">
+      <div class="page-header">
+        <h1>AI <span class="gradient-text">Food Analyzer</span></h1>
+        <p>Upload a food photo or grocery label — AI Vision will identify the food and extract complete nutritional information instantly.</p>
+      </div>
+
+      <div class="analyzer-layout">
+        <!-- Upload Area -->
+        <div class="upload-panel">
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('analyzeImageInput').click()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+            <div class="upload-icon">📸</div>
+            <h3>Drop your food image here</h3>
+            <p>or click to browse</p>
+            <span class="upload-formats">Supports: JPG, PNG, WEBP</span>
+            <input type="file" id="analyzeImageInput" accept="image/*" onchange="handleAnalyzeImage(event)" style="display:none" />
+          </div>
+          <div id="analyzedImageContainer" class="analyzed-image-container" style="display:none">
+            <img id="analyzedImage" src="" alt="Food to analyze" />
+            <button class="change-img-btn" onclick="document.getElementById('analyzeImageInput').click()">Change Image</button>
+          </div>
+
+          <div class="manual-entry">
+            <p class="divider-text">— or enter food name —</p>
+            <div class="search-row">
+              <input type="text" id="foodSearchInput" placeholder="e.g., Chicken Caesar Salad, Dosa, Avocado Toast..." />
+              <button class="btn-primary" onclick="analyzeFood()">Analyze</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis Result -->
+        <div class="analysis-panel">
+          <div id="analysisPlaceholder" class="result-placeholder">
+            <div class="placeholder-icon">🔍</div>
+            <h3>Nutritional Analysis</h3>
+            <p>Upload a food image or enter a food name to get instant nutritional breakdown, health scores, and smart recommendations.</p>
+          </div>
+          <div id="analysisResult" class="analysis-result" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE SECTION -->
+  <section id="section-profile" class="section">
+    <div class="page-container">
+      <div class="page-header">
+        <h1>My <span class="gradient-text">Health Profile</span></h1>
+        <p>Personalize your experience so NutriAI can give you the most accurate, contextual nutritional guidance.</p>
+      </div>
+
+      <div class="profile-layout">
+        <div class="profile-card">
+          <div class="profile-avatar-section">
+            <div class="avatar-circle">👤</div>
+            <h3 id="profileName">Your Name</h3>
+            <span class="profile-badge">NutriAI Member</span>
+          </div>
+          <div class="profile-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="pfName" placeholder="Your name" oninput="updateProfileName()" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Age</label>
+                <input type="number" id="pfAge" placeholder="25" />
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <select id="pfGender">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Non-binary</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" id="pfWeight" placeholder="70" />
+              </div>
+              <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" id="pfHeight" placeholder="170" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="health-goals-card">
+          <h3>🎯 Health Goals & Conditions</h3>
+          <div class="form-group">
+            <label>Primary Goal</label>
+            <select id="pfGoal">
+              <option>Weight Loss</option>
+              <option>Muscle Gain</option>
+              <option>Maintain Weight</option>
+              <option>Manage Chronic Condition</option>
+              <option>Improve Energy & Vitality</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Medical Conditions</label>
+            <div class="condition-chips" id="conditionChips">
+              <span class="condition-chip" data-condition="Diabetes" onclick="toggleCondition(this)">Diabetes</span>
+              <span class="condition-chip" data-condition="Hypertension" onclick="toggleCondition(this)">Hypertension</span>
+              <span class="condition-chip" data-condition="PCOS" onclick="toggleCondition(this)">PCOS</span>
+              <span class="condition-chip" data-condition="Thyroid" onclick="toggleCondition(this)">Thyroid</span>
+              <span class="condition-chip" data-condition="High Cholesterol" onclick="toggleCondition(this)">High Cholesterol</span>
+              <span class="condition-chip" data-condition="IBS" onclick="toggleCondition(this)">IBS</span>
+              <span class="condition-chip" data-condition="Celiac" onclick="toggleCondition(this)">Celiac</span>
+              <span class="condition-chip" data-condition="Kidney Disease" onclick="toggleCondition(this)">Kidney Disease</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Food Allergies</label>
+            <div class="condition-chips">
+              <span class="condition-chip" data-condition="Nuts" onclick="toggleCondition(this)">Nuts</span>
+              <span class="condition-chip" data-condition="Dairy" onclick="toggleCondition(this)">Dairy</span>
+              <span class="condition-chip" data-condition="Gluten" onclick="toggleCondition(this)">Gluten</span>
+              <span class="condition-chip" data-condition="Eggs" onclick="toggleCondition(this)">Eggs</span>
+              <span class="condition-chip" data-condition="Shellfish" onclick="toggleCondition(this)">Shellfish</span>
+              <span class="condition-chip" data-condition="Soy" onclick="toggleCondition(this)">Soy</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Dietary Preference</label>
+            <select id="pfDiet">
+              <option>No Restriction</option>
+              <option>Vegetarian</option>
+              <option>Vegan</option>
+              <option>Keto</option>
+              <option>Mediterranean</option>
+              <option>Gluten-Free</option>
+            </select>
+          </div>
+          <button class="btn-primary full-width" onclick="saveProfile()">💾 Save Profile</button>
+        </div>
+
+        <div class="daily-tracker-card">
+          <h3>📊 Today's Nutrition</h3>
+          <div class="macro-ring-container">
+            <canvas id="macroChart" width="200" height="200"></canvas>
+            <div class="macro-center-text">
+              <span id="totalCalories">0</span>
+              <small>kcal</small>
+            </div>
+          </div>
+          <div class="macro-bars">
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span>🔴 Protein</span>
+                <span id="proteinVal">0g / 120g</span>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill protein-fill" id="proteinBar" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span>🟡 Carbs</span>
+                <span id="carbsVal">0g / 200g</span>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill carbs-fill" id="carbsBar" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span>🟢 Fats</span>
+                <span id="fatsVal">0g / 65g</span>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill fats-fill" id="fatsBar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="log-food-section">
+            <h4>Log Food Item</h4>
+            <div class="log-food-row">
+              <input type="text" id="logFoodInput" placeholder="e.g., 1 cup oatmeal" />
+              <button class="btn-small" onclick="logFood()">Add</button>
+            </div>
+            <div id="foodLog" class="food-log"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay" style="display:none">
+    <div class="loading-content">
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-icon">🤖</div>
+      </div>
+      <p id="loadingText">AI is thinking...</p>
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/nutrition-data.js"></script>
+  <script src="js/ai-engine.js"></script>
+  <script src="js/chart.js"></script>
+</body>
+</html>
